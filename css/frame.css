@@ -175,6 +175,10 @@
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
 }
+.size-annees {
+  height: 20dvh;
+  line-height: 10px;
+}
 
 .property-icon {
   width: 64px;
@@ -440,6 +444,9 @@
   height: auto;
 }
 
+.container-pieces {
+  height: 21.6dvh;
+}
 .property-card h3 {
   font-size: 1.25rem;
   font-weight: 500;
@@ -601,7 +608,7 @@
   height: 28dvh;
 }
 .section .etage {
-  margin-bottom: 3.8%;
+  margin-bottom: 4.8%;
 }
 .section4 .etage {
   margin-bottom: 4.5%;
@@ -611,7 +618,7 @@
 }
 
 .intention {
-  height: 47dvh;
+  height: 51.4dvh;
 }
 
 .suivant-btn {
@@ -755,6 +762,10 @@
   font-size: 1.5rem;
   text-align: center;
   background: #f8f8f8;
+}
+
+.annees {
+  margin-bottom: 18px;
 }
 
 .code-input:focus {
