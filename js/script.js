@@ -21,8 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 select.parentNode.replaceChild(newSelect, select);
                 
                 newSelect.addEventListener('change', function() {
-                    console.log('Renovation value changed:', this.value);
-                    
                     if (this.value.toLowerCase() === 'oui') {
                         yearContainer.style.display = 'block';
                     } else {
@@ -45,8 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const propertyType = card.querySelector('h3').textContent.trim().toLowerCase();
             currentPath = propertyType;
             
-            console.log('Selected property type:', propertyType);
-            
             steps.forEach(step => {
                 step.style.display = 'none';
                 step.classList.remove('active');
@@ -68,11 +64,72 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
             
-            // Initialize renovation selects after showing new frame
             setTimeout(initializeRenovationSelects, 100);
             updateProgress();
         });
     });
+
+    // Form validation function
+    function validateStep(step) {
+        const currentStepElement = document.querySelector(`[data-step="${step}"]`);
+        if (!currentStepElement) return true;
+
+        let isValid = true;
+        const inputs = currentStepElement.querySelectorAll('input, select');
+        const errorMessages = currentStepElement.querySelectorAll('.error-message');
+        
+        // Remove existing error messages
+        errorMessages.forEach(msg => msg.remove());
+
+        inputs.forEach(input => {
+            // Reset styles
+            input.style.borderColor = '';
+            
+            // Skip validation for optional fields
+            if (!input.required && input.value === '') return;
+            
+            // Skip checkbox validation unless required
+            if (input.type === 'checkbox' && !input.required) return;
+
+            // Validate based on input type
+            if (input.type === 'email') {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(input.value)) {
+                    isValid = false;
+                    input.style.borderColor = '#ff4d4d';
+                    showError(input, 'Please enter a valid email address');
+                }
+            } else if (input.type === 'tel') {
+                const phoneRegex = /^\+?[\d\s-]{8,}$/;
+                if (!phoneRegex.test(input.value)) {
+                    isValid = false;
+                    input.style.borderColor = '#ff4d4d';
+                    showError(input, 'Please enter a valid phone number');
+                }
+            } else if (input.tagName === 'SELECT' && input.value === '') {
+                isValid = false;
+                input.style.borderColor = '#ff4d4d';
+                showError(input, 'Please select an option');
+            } else if (input.type !== 'checkbox' && input.value.trim() === '') {
+                isValid = false;
+                input.style.borderColor = '#ff4d4d';
+                showError(input, 'This field is required');
+            }
+        });
+
+        return isValid;
+    }
+
+    // Helper function to show error messages
+    function showError(element, message) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.style.color = '#ff4d4d';
+        errorDiv.style.fontSize = '12px';
+        errorDiv.style.marginTop = '4px';
+        errorDiv.textContent = message;
+        element.parentNode.appendChild(errorDiv);
+    }
 
     // Navigation button handlers
     document.querySelectorAll(".next-button, .next-btn, .suivant-btn").forEach(button => {
@@ -107,7 +164,19 @@ document.addEventListener("DOMContentLoaded", function () {
         if (nextStep) {
             nextStep.style.display = 'block';
             nextStep.classList.add('active');
-            // Initialize renovation selects when showing new step
+            
+            // Add input event listeners for real-time validation
+            const inputs = nextStep.querySelectorAll('input, select');
+            inputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    input.style.borderColor = '';
+                    const errorMessage = input.parentNode.querySelector('.error-message');
+                    if (errorMessage) {
+                        errorMessage.remove();
+                    }
+                });
+            });
+
             setTimeout(initializeRenovationSelects, 100);
         }
 
@@ -118,8 +187,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function nextStep() {
         if (currentStep < totalSteps) {
-            currentStep++;
-            showStep(currentStep);
+            if (validateStep(currentStep)) {
+                currentStep++;
+                showStep(currentStep);
+            }
         }
     }
 
@@ -170,7 +241,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-
     // Initialize role select
     function initializeRoleSelect() {
         const roleSelect = document.getElementById('role-select');
@@ -184,7 +254,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     intentionContainer.style.display = 'block';
                 } else {
                     intentionContainer.style.display = 'none';
-                    // Reset intention select
                     const intentionSelect = document.getElementById('intention-select');
                     if (intentionSelect) {
                         intentionSelect.value = '';
@@ -197,25 +266,46 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle progress bar visibility
     function handleProgressBarVisibility() {
         const footer = document.querySelector('.footer');
-        const progressBar = document.querySelector('.progress-bar-flex');
-        const buffer = 100; 
-    
+        const progressBarFlex = document.querySelector('.progress-bar-flex');
+        let lastScrollTop = 0;
+
         function checkVisibility() {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
             const footerRect = footer.getBoundingClientRect();
             const windowHeight = window.innerHeight;
-    
+
             // If footer is in view
-            if (footerRect.top - windowHeight < -buffer) {
-                document.body.classList.add('footer-visible');
+            if (footerRect.top <= windowHeight) {
+                progressBarFlex.style.opacity = '0';
+                progressBarFlex.style.transform = 'translateY(100%)';
+                progressBarFlex.style.pointerEvents = 'none';
             } else {
-                document.body.classList.remove('footer-visible');
+                progressBarFlex.style.opacity = '1';
+                progressBarFlex.style.transform = 'translateY(0)';
+                progressBarFlex.style.pointerEvents = 'auto';
             }
+
+            // Handle scroll direction
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                progressBarFlex.style.transition = 'all 0.3s ease-out';
+            } else {
+                // Scrolling up
+                progressBarFlex.style.transition = 'all 0.3s ease-in';
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         }
-    
+
+        // Add smooth transition styles
+        progressBarFlex.style.transition = 'all 0.3s ease';
+
         // Check on scroll
         window.addEventListener('scroll', checkVisibility);
         // Check on load
         checkVisibility();
+        // Check on resize
+        window.addEventListener('resize', checkVisibility);
     }
 
     // Initial setup
