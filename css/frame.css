@@ -882,14 +882,19 @@
   .verification-title{
     margin: 2rm 0;
   }
-  .button-container{
-    height: 37%;
+  .consent-label {
     display: flex;
-    flex-direction: column-reverse;
+    align-items: flex-end;
+    height: 30vh;
+    gap: 0.75rem;
+    cursor: pointer;
   }
+  .consent-checkbox {
+    margin-bottom: 37px;
+   
   }
-
-
+  
+  }
 
 
 /* Tablet specific styles */
@@ -1151,3 +1156,73 @@ margin-bottom: 50px;
     justify-content: center;
   }
 }
+@media (max-width: 450px) {
+  .section1 {
+  top: 55px;
+  right: -0.4px;
+  left: 0px;
+  background-color: var(--wwwpalmerpropertiesch-wild-sand);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0px;
+  box-sizing: border-box;
+  }
+  .list6 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 0px 0px;
+  font-family: var(--wwwpalmerpropertiesch-semantic-link);
+  margin-top: 20px;
+  }
+  .container-farmew {
+  margin: 0px;
+  }
+  .button-next {
+  margin-top: 2%;
+  }
+  .backgroundborder-2 {
+  width: 95%;
+  padding: 20px;
+  }
+  .map-preview2 {
+  flex-direction: column;
+  }
+  .map-preview {
+  width: 100%;
+  margin-bottom: 20px;
+  }
+  .address-form {
+  padding: var(--spacing-md);
+  }
+  .form-row {
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  }
+  .form-group {
+  width: 100% !important;
+  flex: none !important;
+  }
+  .text-input {
+  padding: 12px;
+  font-size: 14px;
+  }
+  .button-next {
+  height: 40px !important;
+  }
+  .map-preview img {
+    margin-bottom: 0px;
+  height: 80px;
+  }
+
+  .choose-btn {
+    font-size:13px ;
+    margin-bottom: 2px;
+  }
+  }

@@ -1733,14 +1733,13 @@ label {
     flex-direction: column;
   }
 
-
   /* .grid-2 {
     grid-template-columns: 1fr;
     gap: 15px;
     display: block;
   } */
 
-  .surfaces{
+  .surfaces {
     margin: 0px;
   }
 
@@ -1828,13 +1827,24 @@ label {
     line-height: 10px;
   }
 
+  .container-etage {
+    margin-bottom: 12%;
+  }
+  .container-etage5 {
+    margin-bottom: 11.6%;
+  }
+
+  .container-vetuste {
+    margin-bottom: 24.5%;
+  }
+
   .field-label {
     margin-bottom: 8px;
     font-size: 14px;
   }
 
   .text-input {
-    padding: 12px;
+    padding: 14px;
     font-size: 14px;
   }
 
@@ -1859,6 +1869,7 @@ label {
   .container-farme1 h3 {
     font-size: 20px;
     text-align: center;
+    line-height: 17px;
   }
 
   .container-farme1 p {
@@ -1918,37 +1929,178 @@ label {
     padding: 12px 17px;
     font-weight: 300;
   }
-  .address-form{
-width: 100%;
+  .address-form {
+    width: 100%;
   }
-  .map-preview img{
-    margin-bottom: 14px;
+  .backgroundborder,
+  .backgroundborder-2,
+  .backgroundborder1 {
+    margin-top: 27px;
+    padding-bottom: 10px;
   }
-  .backgroundborder, .backgroundborder-2, .backgroundborder1{
-    margin-top: 32px;
-  }
-  .property-grid{
+  .property-grid {
     margin: 0;
     padding: 0;
   }
-  .property-card1, .property-card6, .property-card7{
-margin: 50px auto;
-padding: 20px 20px 0 20px;
+  .property-grid {
+    margin: 0;
+    gap: 0;
   }
-  .property-card7{
+  .choose-btn {
+    padding: 4px 20px;
+  }
+  .container-farme1 p {
+    margin-bottom: 0px;
+  }
+  .property-card1,
+  .property-card6,
+  .property-card7 {
+    margin: 50px auto;
+    padding: 20px 20px 0 20px;
+  }
+  .property-card {
+    padding: 4px 15px;
+  }
+  .property-card7 {
     margin: 50px auto;
     padding: 50px 20px 0 20px;
   }
-.specificity-section{
-  padding: 43px 0;
-}
-.field-label{
-  font-size: 13px;
-}
+  .specificity-section {
+    padding: 43px 0;
+  }
+  .field-label {
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 400px) {
   .header-account {
     display: none;
   }
+  h1,
+  h2,
+  h3 {
+    font-size: 18px;
+    line-height: 14px;
+  }
+
+  label {
+    font-size: 15px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"] {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 7px 14px;
+    font-weight: 300;
+  }
+  .property-card1 {
+    margin-top: 7%;
+    margin-bottom: 18%;
+    padding: 20px 20px 76px 20px;
+  }
+  .property-card6 {
+    margin-top: 7%;
+    margin-bottom: 18%;
+    padding: 20px 20px 20% 20px;
+  }
+  .property-card7 {
+    margin-top: 7%;
+    margin-bottom: 18%;
+    padding: 20px 20px 20% 20px;
+  }
+  .property-card9 {
+    margin-top: 7%;
+    margin-bottom: 18%;
+    padding: 20px 20px 22% 20px;
+    height: 71vh;
+  }
+  .container-etage-5 {
+    margin-bottom: 2.3%;
+  }
+  .container-etage5 {
+    margin-bottom: 6.2%;
+  }
+  .container-specificity {
+    margin-bottom: 10%;
+  }
+  .container-etage {
+    margin-bottom: 5%;
+  }
+  .number-input-group {
+    margin: 0;
+  }
+  .flex-number {
+    margin: 0;
+  }
+  .grid-2 {
+    margin: 0;
+  }
+  .text-input {
+    padding: 12;
+  }
+  .hide-on-mobile {
+    display: none;
+  }
+  .field-label {
+    margin-bottom: 0px;
+    font-size: 11px;
+    /* margin-top: 0; */
+  }
+  #renovation-select,
+  #renovation-year {
+    padding: 7px 6px;
+  }
+
+  .renovation-container {
+    flex-direction: column;
+    gap: 0px;
+  }
+  .container-vetuste {
+    margin-bottom: 30px;
+  }
+  .specificity-section {
+    padding: 0;
+    margin-bottom: 20%;
+  }
+
+  .checkbox-group {
+    gap: 0;
+  }
+  .checkbox-group {
+    padding: 0;
+  }
+  #role-select {
+    padding: 9px 6px;
+  }
+  .intention {
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom: -9px;
+  }
+  .accordion {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+    margin-bottom: 16px;
+    height: 29.8vh;
+  }
+  .container-estimation{
+    margin-bottom: 6%;
+  }
+  .consent-label{
+    height: 5%;
+  }
+  .consent-checkbox{
+    margin-bottom: 53px;
+  }
+  .verification-content {
+    gap: 2.3rem;
+  }
+  .backgroundborder{
+    padding-bottom: 35px;
+  }
+
 }
