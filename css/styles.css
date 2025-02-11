@@ -1988,7 +1988,7 @@ label {
 }
 
 @media (max-width: 400px) {
-  .backgroundborder-2{
+  .backgroundborder-2 {
     margin-top: 27px;
     padding-bottom: 10px;
     padding: 8px 20px 13px 20px;
@@ -2146,10 +2146,47 @@ label {
   .property-card {
     padding: 10px 15px;
   }
-.button-next {
-  padding: 2px;
-  height: 30px !important;
-  font-size: small;
-  margin-top: 5px;
-}
+  .button-next {
+    padding: 2px;
+    height: 30px !important;
+    font-size: small;
+    margin-top: 5px;
+  }
+  .property-card4 {
+    padding: 0px 20px 0 20px;
+  }
+  .size-annees {
+    margin-bottom: 0;
+  }
+
+  .suivant-btn2 {
+    width: 100%;
+    margin: 70px 0;
+    padding: 2px;
+    background-color: #00a34a;
+    color: white;
+  }
+  .suivant-btn5 {
+    width: 100%;
+    margin-top: 26.5px;
+    padding: 2px;
+    background-color: #00a34a;
+    color: white;
+    font-size: 16px;
+    font-family: "Josefin Sans", sans-serif;
+  }
+  .container-pieces{
+    height: 20.6dvh;
+  }
+  .property-card4{
+    margin-top: 7%;
+    margin-bottom: 18%;
+    padding: 0px 20px 30% 20px;
+    
+  }
+  .property-card5{
+    margin-top: 7%;
+    margin-bottom: 18%;
+    padding: 0px 20px 18.5% 20px;
+  }
 }
