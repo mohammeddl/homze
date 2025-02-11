@@ -1885,6 +1885,7 @@ label {
   .verification-title {
     font-size: 1.25rem;
     text-align: center;
+    margin-top: 10px;
   }
 
   .consent-text {
@@ -1984,12 +1985,7 @@ label {
   .accordion {
     margin-bottom: 26px;
   }
-  .property-card9 {
-    /* margin-top: 7%; */
-    /* margin-bottom: 18%; */
-    padding: 20px 20px 22% 20px;
-    height: 73dvh;
-  }
+
 }
 
 @media (max-width: 400px) {
@@ -2036,23 +2032,23 @@ label {
   .property-card1 {
     margin-top: 7%;
     margin-bottom: 18%;
-    padding: 20px 20px 76px 20px;
+    padding: 0px 20px 76px 20px;
   }
   .property-card6 {
     margin-top: 7%;
     margin-bottom: 18%;
-    padding: 20px 20px 20% 20px;
+    padding: 0px 20px 20% 20px;
   }
   .property-card7 {
     margin-top: 7%;
     margin-bottom: 18%;
-    padding: 20px 20px 20% 20px;
+    padding: 0px 20px 20% 20px;
   }
   .property-card9 {
     margin-top: 7%;
     margin-bottom: 18%;
-    padding: 20px 20px 22% 20px;
-    height: 71dvh;
+    padding: 0px 20px 22% 20px;
+    height: 65dvh;
   }
   .container-etage-5 {
     margin-bottom: 2.3%;
@@ -2132,7 +2128,7 @@ label {
     margin-bottom: 53px;
   }
   .verification-content {
-    gap: 2.3rem;
+    gap: 1.9rem;
   }
   .backgroundborder {
     padding-bottom: 35px;
