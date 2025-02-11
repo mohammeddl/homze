@@ -862,7 +862,7 @@ label {
 }
 .mobile-menu .bottom-canvas {
   padding: 30px 20px 100px;
-  height: 100vh;
+  height: 100dvh;
   overflow-y: auto;
 }
 
@@ -1947,7 +1947,7 @@ label {
     padding: 20px 20px 0 20px;
   }
 
-  .backgroundborder{
+  .backgroundborder {
     margin-top: 27px;
     padding-bottom: 30px;
   }
@@ -1961,7 +1961,7 @@ label {
   .property-card1,
   .property-card6,
   .property-card7 {
-    margin: 50px  auto;
+    margin: 50px auto;
     padding: 20px 20px 0 20px;
   }
   .property-card {
@@ -1988,7 +1988,7 @@ label {
     /* margin-top: 7%; */
     /* margin-bottom: 18%; */
     padding: 20px 20px 22% 20px;
-    height: 73vh;
+    height: 73dvh;
   }
 }
 
@@ -2052,7 +2052,7 @@ label {
     margin-top: 7%;
     margin-bottom: 18%;
     padding: 20px 20px 22% 20px;
-    height: 71vh;
+    height: 71dvh;
   }
   .container-etage-5 {
     margin-bottom: 2.3%;
@@ -2120,25 +2120,24 @@ label {
     grid-template-columns: repeat(1, 1fr);
     gap: 5px;
     margin-bottom: 16px;
-    height: 29.8vh;
+    height: 29.8dvh;
   }
-  .container-estimation{
+  .container-estimation {
     margin-bottom: 6%;
   }
-  .consent-label{
+  .consent-label {
     height: 5%;
   }
-  .consent-checkbox{
+  .consent-checkbox {
     margin-bottom: 53px;
   }
   .verification-content {
     gap: 2.3rem;
   }
-  .backgroundborder{
+  .backgroundborder {
     padding-bottom: 35px;
   }
   .property-card {
     padding: 4px 15px;
   }
-
 }
