@@ -2013,8 +2013,9 @@ label {
   }
 
   .choose-btn {
-    padding: 2px 20px;
+    padding: 6px 20px;
     margin-bottom: 6px;
+    font-size: 16px;
   }
   .property-icon {
     width: 80px;
@@ -2168,15 +2169,15 @@ label {
   }
   .suivant-btn5 {
     width: 100%;
-    margin-top: 26.5px;
-    padding: 2px;
+    margin-top: 10.5px;
+    padding: 6px 2px;
     background-color: #00a34a;
     color: white;
     font-size: 16px;
     font-family: "Josefin Sans", sans-serif;
   }
   .container-pieces{
-    height: 20.6dvh;
+    height: 18.6dvh;
   }
   .property-card4{
     margin-top: 7%;
@@ -2187,6 +2188,17 @@ label {
   .property-card5{
     margin-top: 7%;
     margin-bottom: 18%;
-    padding: 0px 20px 18.5% 20px;
+    padding: 0px 20px 17.5% 20px;
+  }
+
+  .property-card6{
+    margin-top: 7%;
+    margin-bottom: 18%;
+    padding: 0px 20px 20.2% 20px;
+  }
+  .property-card6-maison{
+    margin-top: 7%;
+    margin-bottom: 18%;
+    padding: 0px 20px 17.2% 20px;
   }
 }
