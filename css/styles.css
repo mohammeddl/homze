@@ -249,6 +249,7 @@ a:hover {
 label {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 600;
+  line-height: 30px;
 }
 
 .link {
@@ -1760,6 +1761,10 @@ label {
     padding: 15px;
     gap: 15px;
   }
+  .property-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
 
   .property-card {
     padding: 15px;
@@ -1932,22 +1937,19 @@ label {
   .address-form {
     width: 100%;
   }
-  .backgroundborder,
   .backgroundborder-2,
   .backgroundborder1 {
     margin-top: 27px;
-    padding-bottom: 10px;
+    padding: 20px 20px 0 20px;
   }
-  .property-grid {
-    margin: 0;
-    padding: 0;
+
+  .backgroundborder{
+    margin-top: 27px;
+    padding-bottom: 30px;
   }
-  .property-grid {
-    margin: 0;
-    gap: 0;
-  }
+
   .choose-btn {
-    padding: 4px 20px;
+    padding: 10px 22px;
   }
   .container-farme1 p {
     margin-bottom: 0px;
@@ -1959,7 +1961,8 @@ label {
     padding: 20px 20px 0 20px;
   }
   .property-card {
-    padding: 4px 15px;
+    padding: 24px 15px;
+    margin: 0;
   }
   .property-card7 {
     margin: 50px auto;
@@ -1974,6 +1977,11 @@ label {
 }
 
 @media (max-width: 400px) {
+  .backgroundborder-2,
+  .backgroundborder1 {
+    margin-top: 27px;
+    padding-bottom: 10px;
+  }
   .header-account {
     display: none;
   }
@@ -1986,6 +1994,18 @@ label {
 
   label {
     font-size: 15px;
+  }
+
+  .choose-btn {
+    padding: 4px 20px;
+  }
+  .property-grid {
+    margin: 0;
+    padding: 0;
+  }
+  .property-grid {
+    margin: 0;
+    gap: 0;
   }
 
   input[type="text"],
@@ -2048,7 +2068,6 @@ label {
   .field-label {
     margin-bottom: 0px;
     font-size: 11px;
-    /* margin-top: 0; */
   }
   #renovation-select,
   #renovation-year {
@@ -2101,6 +2120,9 @@ label {
   }
   .backgroundborder{
     padding-bottom: 35px;
+  }
+  .property-card {
+    padding: 4px 15px;
   }
 
 }

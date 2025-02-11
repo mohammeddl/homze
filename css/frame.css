@@ -998,10 +998,10 @@
     gap: 15px;
   }
 
+
   .property-card {
-    padding: 15px;
-    margin-bottom: 15px;
-  }
+    padding: 30px 15px;
+}
 
   .flex-number {
     flex-direction: column;
@@ -1224,5 +1224,9 @@ margin-bottom: 50px;
   .choose-btn {
     font-size:13px ;
     margin-bottom: 2px;
+  }
+  .property-card {
+    padding: 15px;
+    margin-bottom: 15px;
   }
   }
