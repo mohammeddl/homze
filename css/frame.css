@@ -8,11 +8,12 @@
   align-items: flex-start;
   justify-content: center;
 }
-.item14 {
+.item15 {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  width: 100%;
+  font-weight: 700;
+  font-family: var(--wwwpalmerpropertiesch-semantic-link);
 }
 .estimer3 {
   margin: 0;
@@ -28,12 +29,11 @@
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
-  padding: 0px var(--padding-455xl-7) 0px var(--padding-455xl-8);
   gap: 0px 4px;
   font-family: var(--wwwpalmerpropertiesch-semantic-link);
 }
 .container53 {
-  width: 1320px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -425,6 +425,11 @@
 }
 
 .property-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+.property-icon-apprtement {
   width: 100px;
   height: 100px;
   margin-bottom: 10px;
@@ -955,6 +960,13 @@
   .header-lower {
     padding: 10px;
   }
+  .property-grid .property-card h3{
+    font-size: 16px;
+    margin: 5px 0 6px 0;
+    line-height: 17px;
+
+
+  }
 
   .container-farme {
     margin-top: 60px;
@@ -1135,6 +1147,7 @@
     margin-top: 40px;
     position: relative;
     padding-bottom: 60px;
+    top: 0;
   }
 
   .footer .content-footer-bottom {
