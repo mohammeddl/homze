@@ -1220,6 +1220,10 @@ label {
   position: relative;
   margin-top: 20px;
 }
+.newsletter-form input{
+  background: transparent;
+  color: #a5a3a3;
+}
 
 .newsletter-input {
   width: 100%;
