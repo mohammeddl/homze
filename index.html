@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/frame.css" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/alert.css" />
+    <link rel="stylesheet" type="text/css" href="step2.css" />
 
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="images/logo/favicon.png" />
@@ -257,8 +258,8 @@
           <!-- End Mobile Menu -->
         </header>
 
-        <div class="frame1">
-          <div class="section1">
+        <div class="frame">
+          <div class="section1 frame1">
             <div class="container53">
               <div class="list6">
                 <div class="item14">
@@ -308,55 +309,42 @@
           </div>
 
           <!-- 2 frame -->
-          <div class="form-card step" data-step="2">
-            <div class="container-farmew">
-            <div class="backgroundborder-2">
-            <div class="map-preview2">
-              <div class="map-preview">
-                <img src="https://cdn.britannica.com/37/245037-050-79129D52/world-map-continents-oceans.jpg?w=400&h=300&c=crop" alt="Map Preview" />
-              </div>
-  
-              <div class="address-form">
-                <h3 class="address-form">Adresse de la propriété</h3>
-                <p>Entre ton adresse avec le numéro de rue.</p>
-  
-                <div class="form-row">
-                  <div class="form-group" style="flex: 0 0 310px">
-                    <label>Adresse</label>
-                    <input
-                      type="text"
-                      class="text-input"
-                      placeholder="Adresse"
-                    />
-                  </div>
-                  <div class="form-group" style="flex: 0 0 140px">
-                    <label>Numéro</label>
-                    <input type="text" class="text-input" placeholder="Numéro"  />
-                  </div>
+          <div class="addr-wrapper step" data-step="2">
+            <h1 class="addr-title">Adresse de la propriété</h1>
+            <p class="addr-subtitle">Entre ton adresse avec le numéro de rue.</p>
+            
+            <form class="addr-form">
+                <div class="addr-grid">
+                    <div class="addr-field-group addr-field-large">
+                        <label class="addr-label">Adresse</label>
+                        <input type="text" class="addr-input" placeholder="Adresse">
+                    </div>
+                    <div class="addr-field-group addr-field-small">
+                        <label class="addr-label">Numéro</label>
+                        <input type="text" class="addr-input" placeholder="Numéro">
+                    </div>
                 </div>
-  
-                <div class="form-row">
-                  <div class="form-group" style="flex: 0 0 140px">
-                    <label>Code postal</label>
-                    <input type="text" class="text-input" placeholder="Code postal" />
-                  </div>
-                  <div class="form-group" style="flex: 0 0 310px">
-                    <label>Ville</label>
-                    <input type="text" class="text-input" placeholder="Ville" />
-                  </div>
+        
+                <div class="addr-grid">
+                    <div class="addr-field-group addr-field-small">
+                        <label class="addr-label">Code postal</label>
+                        <input type="text" class="addr-input" placeholder="Code postal">
+                    </div>
+                    <div class="addr-field-group addr-field-large">
+                        <label class="addr-label">Ville</label>
+                        <input type="text" class="addr-input" placeholder="Ville">
+                    </div>
                 </div>
-  
-                <button
-                  class="next-button button-next"
-                  style="width: 100%; border-radius: 8px; height: 48px"
-                >
-                  Valider mon adresse
-                </button>
-              </div>
-            </div>            
-          </div>
-          </div>
-          </div>
+        
+                <div class="addr-field-group">
+                    <label class="addr-label">Pays</label>
+                    <input type="text" class="addr-input" placeholder="Pays">
+                </div>
+        
+                <button type="submit" class="addr-submit">Valider mon adresse</button>
+            </form>
+        </div>
+
 
           <!-- 3 frame -->
           <div class="form-card step" data-step="3">

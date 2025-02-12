@@ -1246,6 +1246,9 @@ label {
   color: #fff;
 }
 
+.frame1 {
+  display: block;
+}
 .footer-bottom {
   border-top: 0.8px solid rgba(255, 255, 255, 0.1);
   padding: 20px 0;
@@ -1616,10 +1619,27 @@ label {
 /* Media Queries
 -------------------------------------------------------------- */
 /* General responsive adjustments */
+@media (max-width: 1324px) {
+  .form-row .text-input{
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 14px 9px;
+    width: 88%;
+  }
+  .address-form h3{
+    font-size: 26px;
+    line-height: 41px;
+  }
+
+  .form-row .from-adresse{
+    flex: 0 0 260px;
+  }
+}
 @media (max-width: 1024px) {
   .main-header {
     padding: 10px 20px;
   }
+
 
   .main-header .logo-box {
     margin-bottom: 15px;
@@ -2149,6 +2169,7 @@ label {
     height: 30px !important;
     font-size: small;
     margin-top: 5px;
+    font-family: var(--wwwpalmerpropertiesch-semantic-link);
   }
   .property-card4 {
     padding: 0px 20px 0 20px;

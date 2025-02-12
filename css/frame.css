@@ -190,6 +190,13 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+  .frame1 {
+    display: none !important;
+  }
+  .footer {
+    display: none !important;
+  }
+
   .form-row {
     flex-direction: column;
     gap: var(--spacing-md);
@@ -975,8 +982,6 @@
     font-size: 16px;
     margin: 5px 0 6px 0;
     line-height: 17px;
-
-
   }
 
   .container-farme {
@@ -1182,6 +1187,9 @@
     justify-content: center;
     padding: 5px 0px;
     box-sizing: border-box;
+  }
+  .frame1{
+    display: hidden;
   }
   .list6 {
     align-self: stretch;
