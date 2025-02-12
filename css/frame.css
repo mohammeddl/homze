@@ -978,6 +978,9 @@
   .header-lower {
     padding: 10px;
   }
+  .step.active {
+    margin-top: 0;
+  }
   .property-grid .property-card h3{
     font-size: 16px;
     margin: 5px 0 6px 0;
