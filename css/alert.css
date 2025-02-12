@@ -53,7 +53,6 @@
     flex-shrink: 0;
 }
 
-/* Tablet Styles */
 @media (max-width: 768px) {
     .custom-alert {
         padding: 12px 20px;
@@ -76,7 +75,6 @@
     }
 }
 
-/* Mobile Styles */
 @media (max-width: 480px) {
     .custom-alert {
         padding: 10px 15px;
@@ -102,7 +100,7 @@
     }
 }
 
-/* Small Mobile Styles */
+
 @media (max-width: 320px) {
     .custom-alert {
         padding: 8px 12px;
@@ -123,7 +121,7 @@
     }
 }
 
-/* Handle notch devices */
+
 @supports (padding: max(0px)) {
     .custom-alert {
         padding-left: max(15px, env(safe-area-inset-left));

@@ -249,21 +249,50 @@ document.addEventListener("DOMContentLoaded", function () {
             el.style.display = 'none';
             el.classList.remove('active');
         });
-
+    
         let nextStep;
         if (step <= 3) {
             nextStep = document.querySelector(`[data-step="${step}"]`);
         } else if (step >= 7) {
             nextStep = document.querySelector(`[data-step="${step}"]`);
         } else {
-            nextStep = document.querySelector(`[data-step="${step}-${currentPath}"]`);
+            // For steps 4-6, we need to ensure the property type path is included
+            const savedPropertyType = FormStore.getPropertyType();
+            if (savedPropertyType) {
+                nextStep = document.querySelector(`[data-step="${step}-${savedPropertyType}"]`);
+            }
+            // If no property type specific step is found, fall back to the base step
+            if (!nextStep) {
+                nextStep = document.querySelector(`[data-step="${step}"]`);
+            }
         }
-
+    
         if (nextStep) {
             nextStep.style.display = 'block';
             nextStep.classList.add('active');
             FormStore.restoreStepData(step);
-            // input event listeners for real-time validation
+    
+            // Restore property type specific data
+            const savedPropertyType = FormStore.getPropertyType();
+            if (savedPropertyType && (step === 4 || step === 5 || step === 6)) {
+                const propertyTypeStep = FormStore.getStepData(`${step}-${savedPropertyType}`);
+                if (propertyTypeStep) {
+                    Object.entries(propertyTypeStep).forEach(([key, value]) => {
+                        const element = nextStep.querySelector(`[name="${key}"]`) || 
+                                      nextStep.querySelector(`#${key}`) ||
+                                      nextStep.querySelector(`[data-name="${key}"]`);
+                        if (element) {
+                            if (element.type === 'checkbox') {
+                                element.checked = value;
+                            } else {
+                                element.value = value;
+                            }
+                        }
+                    });
+                }
+            }
+    
+            // Add input event listeners for real-time validation
             const inputs = nextStep.querySelectorAll('input, select');
             inputs.forEach(input => {
                 input.addEventListener('input', () => {
@@ -274,14 +303,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 });
             });
-
+    
             setTimeout(initializeRenovationSelects, 100);
         }
-
+    
         progressSection.classList.toggle("active", step > 1);
         backLink.style.visibility = step === 1 ? "hidden" : "visible";
         updateProgress();
     }
+    
 
     function nextStep() {
         if (currentStep < totalSteps) {
