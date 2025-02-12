@@ -1,0 +1,48 @@
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    background: #fff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.custom-alert.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.custom-alert.error {
+    border-left: 4px solid #ff4d4d;
+}
+
+.custom-alert.success {
+    border-left: 4px solid #00a34a;
+}
+
+.alert-icon {
+    font-size: 20px;
+}
+
+.alert-message {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.alert-close {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #666;
+    font-size: 18px;
+    padding: 5px;
+}
