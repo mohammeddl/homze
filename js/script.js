@@ -80,6 +80,49 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    const resetButton = document.querySelector('.reset-button');
+if (resetButton) {
+    const modal = createConfirmModal();
+    
+    resetButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.add('show');
+    });
+
+    // Handle modal button clicks
+    modal.querySelector('.confirm-modal-button.cancel').addEventListener('click', () => {
+        modal.classList.remove('show');
+    });
+
+    modal.querySelector('.confirm-modal-button.confirm').addEventListener('click', () => {
+        // Reset the form using FormStore
+        FormStore.clearData();
+        
+        // Reset current step and path
+        currentStep = 1;
+        currentPath = '';
+        
+        // Show step 1
+        showStep(1);
+        
+        // Update progress
+        updateProgress();
+        
+        // Hide modal
+        modal.classList.remove('show');
+        
+        // Show success message
+        showAlert('Formulaire réinitialisé', 'success');
+    });
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('show');
+        }
+    });
+}
+
     // Form validation function
     function validateStep(step) {
         const currentStepElement = document.querySelector(`[data-step="${step}"]`);
@@ -539,3 +582,18 @@ function showAlert(message, type = 'error') {
 }
 
 
+function createConfirmModal() {
+    const modal = document.createElement('div');
+    modal.className = 'confirm-modal';
+    modal.innerHTML = `
+        <div class="confirm-modal-content">
+            <div class="confirm-modal-title">Êtes-vous sûr de vouloir recommencer depuis le début ?</div>
+            <div class="confirm-modal-buttons">
+                <button class="confirm-modal-button cancel">Annuler</button>
+                <button class="confirm-modal-button confirm">Confirmer</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    return modal;
+}

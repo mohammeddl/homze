@@ -3642,6 +3642,101 @@ label {
 .addr-submit:hover {
   background: #15be61;
 }
+.reset-button {
+  display: none;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  transition: color 0.3s ease;
+}
+
+.reset-button:hover {
+  color: #333;
+}
+.confirm-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.confirm-modal.show {
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+.confirm-modal.show .confirm-modal-content {
+  transform: translateY(0);
+}
+
+.confirm-modal-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.confirm-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.confirm-modal-button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-modal-button.confirm {
+  background-color: #00a34a;
+  color: white;
+}
+
+.confirm-modal-button.confirm:hover {
+  background-color: #008f41;
+}
+
+.confirm-modal-button.cancel {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.confirm-modal-button.cancel:hover {
+  background-color: #d1d5db;
+}
 
 @media (max-width: 480px) {
   .addr-field-small {
@@ -3799,6 +3894,18 @@ label {
   h3 {
     font-size: 25px;
     line-height: 38px;
+  }
+  .reset-button {
+    display: block;
+  }
+
+  .progress-bar2 {
+    position: relative; 
+  }
+
+  
+  .progress-bar3 {
+    padding-right: 40px;
   }
 }
 
