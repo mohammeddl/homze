@@ -3264,6 +3264,13 @@ label {
     padding: 20px 0;
   }
 
+  .backgroundborder1 {
+    margin: 0 auto !important;
+  }
+  .specificity-section{
+    padding: 20px 0 !important;
+  }
+
   input[type="text"],
   input[type="number"],
   input[type="email"] {
@@ -3274,7 +3281,7 @@ label {
   }
 
   .backgroundborder1 {
-    margin-top: 27px;
+    margin-top: 0;
     padding: 20px 20px 30px 20px;
   }
 
@@ -3299,7 +3306,7 @@ label {
   .property-card1,
   .property-card6,
   .property-card7 {
-    margin: 50px auto;
+    margin: 0 auto;
     padding: 20px 20px 0 20px;
   }
 
@@ -3309,7 +3316,7 @@ label {
   }
 
   .property-card7 {
-    margin: 50px auto;
+    margin: 0 auto;
     padding: 50px 20px 0 20px;
   }
 
@@ -3326,7 +3333,12 @@ label {
   }
 
   .accordion {
-    margin-bottom: 26px;
+    margin-bottom: 0 ;
+    height: 35dvh;
+  }
+  .button-recevoir {
+    padding: 12px 68px;
+    margin-bottom: 10px;
   }
 }
 
@@ -3654,8 +3666,8 @@ label {
   cursor: pointer;
   padding: 8px;
   position: absolute;
-  right: 20px;
-  top: 20%;
+  right: 19px;
+  top: 17%;
   transform: translateY(-50%);
   z-index: 1000;
   transition: color 0.3s ease;
