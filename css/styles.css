@@ -3870,6 +3870,13 @@ label {
   .addr-label{
     font-size: 1.6rem;
   }
+  .back-link{
+    font-size: 1.7rem !important;
+    width:150px
+  }
+  .step-counter {
+    font-size: 1.9rem !important;
+}
   .addr-wrapper{
     max-width: 900px;
   }
