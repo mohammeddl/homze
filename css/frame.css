@@ -981,12 +981,74 @@
   .step.active {
     margin-top: 0;
   }
-  .property-grid .property-card h3{
+  .property-grid .property-card h3 {
     font-size: 16px;
     margin: 5px 0 6px 0;
     line-height: 17px;
   }
+  .progress-bar-flex {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: white;
+    padding: 12px 0;
+    z-index: 1000;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
 
+  .progress-section {
+    width: 90%;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .progress-bar2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .progress-bar3 {
+    flex: 1;
+    margin-left: 10px;
+  }
+
+  .back-link {
+    font-size: 14px;
+    padding: 0;
+    width: auto;
+    color: #00a34a;
+    text-decoration: none;
+  }
+
+  .progress-container {
+    height: 4px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 4px;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background-color: #00a34a;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  .step-counter {
+    color: #666;
+    font-size: 14px;
+  }
+
+  .form-card {
+    padding-bottom: 70px;
+  }
   .container-farme {
     margin-top: 60px;
   }
@@ -1191,7 +1253,22 @@
     padding: 5px 0px;
     box-sizing: border-box;
   }
-  .frame1{
+  .progress-bar-flex {
+    padding: 8px 0;
+  }
+
+  .progress-section {
+    width: 95%;
+  }
+
+  .back-link {
+    font-size: 13px;
+  }
+
+  .step-counter {
+    font-size: 13px;
+  }
+  .frame1 {
     display: hidden;
   }
   .list6 {
@@ -1254,5 +1331,4 @@
     padding: 15px;
     margin-bottom: 15px;
   }
-
 }
