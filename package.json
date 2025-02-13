@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "purgecss": "^7.0.2"
+  },
+  "scripts": {
+  "purgecss": "purgecss --config purgecss.config.cjs"
+}
+
+}
