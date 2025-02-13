@@ -3340,6 +3340,12 @@ label {
     padding: 12px 68px;
     margin-bottom: 10px;
   }
+  .property-card9{
+    margin: 0 auto;
+  }
+  .consent-label{
+    height: 20dvh;
+  }
 }
 
 @media (max-width: 400px) {
