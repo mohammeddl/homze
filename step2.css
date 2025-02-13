@@ -131,3 +131,19 @@
         padding: 16px;
     }
 }
+@media (max-width: 760px) {
+    /* .addr-grid {
+        flex-direction: column;
+    } */
+    
+    .addr-field-small {
+        width: 29%;
+    }
+    
+    .addr-wrapper {
+        padding: 16px;
+    }
+    .addr-title {
+        margin-top: 24px;
+    }
+}
