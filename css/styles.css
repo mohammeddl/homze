@@ -823,7 +823,7 @@ button:not(:disabled) {
 }
 
 .container-farme {
-  margin-top: 15%;
+  margin: 14% 0;
   display: flex;
   justify-content: center;
 }
