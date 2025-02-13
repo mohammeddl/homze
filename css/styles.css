@@ -787,10 +787,10 @@ button:not(:disabled) {
   left: 0;
   right: 0;
   width: 100%;
-  background: white;
+  background: transparent;
   padding: 9px 0;
   z-index: 1000;
-  border-top: 1px solid #eee;
+  /* border-top: 1px solid #eee; */
   display: flex;
   justify-content: center;
   transition: all 0.3s ease;
@@ -972,6 +972,7 @@ button:not(:disabled) {
 
 .section-title {
   font-size: 20px;
+  line-height: 48px;
   font-weight: 600;
   color: #111827;
 }
@@ -1020,7 +1021,7 @@ button:not(:disabled) {
   margin-bottom: 15px;
 }
 .field {
-  height: 25dvh;
+  height: 24.8dvh;
 }
 .field2 {
   height: 29.7dvh;
@@ -1029,7 +1030,7 @@ button:not(:disabled) {
   height: 28dvh;
 }
 .section .etage {
-  margin-bottom: 4.8%;
+  margin-bottom: 5.8%;
 }
 .annees {
   margin-bottom: 0;
