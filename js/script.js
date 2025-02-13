@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Navigation button handlers
-    document.querySelectorAll(".next-button, .next-btn, .suivant-btn, .addr-submit").forEach(button => {
+    document.querySelectorAll(".next-button, .next-btn, .suivant-btn, .button-recevoir, .addr-submit").forEach(button => {
         button.addEventListener("click", (e) => {
             e.preventDefault();
             nextStep();
