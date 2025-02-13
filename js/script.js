@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentPath = '';
     const totalSteps = 9;
     const progressSection = document.querySelector(".progress-section");
+    const progressContainerFlex = document.querySelector(".progress-bar-flex");
     const progressBar = document.querySelector(".progress-bar");
     const backLink = document.querySelector(".back-link");
     const steps = document.querySelectorAll(".step");
@@ -309,6 +310,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
         progressSection.classList.toggle("active", step > 1);
         backLink.style.visibility = step === 1 ? "hidden" : "visible";
+        progressContainerFlex.style.visibility = step === 1 ? "hidden" : "visible";
         updateProgress();
     }
     

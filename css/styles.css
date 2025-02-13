@@ -349,9 +349,7 @@ select:disabled {
   opacity: 1;
 }
 
-button {
-  -webkit-appearance: button;
-}
+
 
 [type="button"]:not(:disabled),
 button:not(:disabled) {
@@ -390,10 +388,7 @@ button:not(:disabled) {
   -webkit-appearance: button;
 }
 
-::file-selector-button {
-  font: inherit;
-  -webkit-appearance: button;
-}
+
 
 .container {
   --bs-gutter-x: 1.5rem;
@@ -867,6 +862,7 @@ button:not(:disabled) {
   transition: all 0.3s ease;
   opacity: 1;
   transform: translateY(0);
+  visibility: visible;
 }
 
 .progress-bar2 {
@@ -875,6 +871,8 @@ button:not(:disabled) {
   align-items: center;
   padding: 0 15px;
 }
+
+
 
 .progress-bar3 {
   width: 100%;
@@ -2733,28 +2731,6 @@ label {
   background-color: #00a34a;
 }
 
-/*------------ range slider ---------------- */
-
-/* Styling; */
-
-/* Handles and cursors;
- */
-
-/* Disabled state; */
-
-/*------------ form ---------------- */
-
-/*------------ nice select ---------------- */
-
-/*------------ carousel ---------------- */
-
-/*------------ avatar ---------------- */
-
-/*------------ off canvas ---------------- */
-
-/*------------ box icon ---------------- */
-
-/*------------ hover ---------------- */
 
 /*------------ preloader ---------------- */
 /* PreLoad
@@ -2814,7 +2790,7 @@ label {
   animation: box4 var(--duration) linear infinite;
 }
 .boxes .box > div {
-  --background: #ed2027;
+  --background: var(--bs-form-valid-border-color);
   --top: auto;
   --right: auto;
   --bottom: auto;
@@ -2838,12 +2814,12 @@ label {
   --left: 0;
 }
 .boxes .box > div:nth-child(2) {
-  --background: #b20e14;
+  --background: #00a34a;
   --right: 0;
   --rotateY: 90deg;
 }
 .boxes .box > div:nth-child(3) {
-  --background: #e11219;
+  --background: #00a34a;
   --rotateX: -90deg;
 }
 .boxes .box > div:nth-child(4) {
@@ -2907,11 +2883,7 @@ label {
   top: 0;
 }
 
-/*--------------- dashboard ---------------- */
 
-/*-------------- Responsive ----------------- */
-/* Media Queries
--------------------------------------------------------------- */
 /* General responsive adjustments */
 @media screen and (min-width: 2300px) {
   .footer {
@@ -3003,12 +2975,6 @@ label {
   .form-card {
     padding: 10px;
   }
-
-  /* .grid-2 {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    display: block;
-  } */
 
   .surfaces {
     margin: 0px;
@@ -3103,6 +3069,9 @@ label {
     visibility: visible;
     padding: 0 0;
     width: 80px;
+  }
+  .progress-bar-flex{
+    visibility: visible;
   }
   .section {
     margin-bottom: 10px;
