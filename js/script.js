@@ -354,6 +354,8 @@ if (resetButton) {
         progressSection.classList.toggle("active", step > 1);
         backLink.style.visibility = step === 1 ? "hidden" : "visible";
         progressContainerFlex.style.visibility = step === 1 ? "hidden" : "visible";
+        resetButton.style.visibility = step === 1 ? "hidden" : "visible";
+
         updateProgress();
     }
     
