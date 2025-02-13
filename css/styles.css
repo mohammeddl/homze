@@ -3059,6 +3059,9 @@ label {
     font-size: 25px;
     line-height: 38px;
   }
+  .hide-on-mobile {
+    display: none;
+  }
 
   .header-account .flat-bt-top {
     display: none;
@@ -3647,12 +3650,12 @@ label {
   background: none;
   border: none;
   color: #666;
-  font-size: 38px;
+  font-size: 34px;
   cursor: pointer;
   padding: 8px;
   position: absolute;
-  right: 26px;
-  top: 21%;
+  right: 20px;
+  top: 20%;
   transform: translateY(-50%);
   z-index: 1000;
   transition: color 0.3s ease;
