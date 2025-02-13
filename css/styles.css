@@ -1706,7 +1706,7 @@ button:not(:disabled) {
   }
 
   .container-field2 {
-    height: 20.5dvh;
+    height: 21.5dvh;
   }
 
   .intention {
@@ -3520,7 +3520,7 @@ label {
   .suivant-btn2 {
     width: 100%;
     margin: 70px 0;
-    padding: 2px;
+    padding: 5px;
     background-color: #00a34a;
     color: white;
   }
@@ -3647,12 +3647,12 @@ label {
   background: none;
   border: none;
   color: #666;
-  font-size: 52px;
+  font-size: 38px;
   cursor: pointer;
   padding: 8px;
   position: absolute;
-  right: 15px;
-  top: 15%;
+  right: 26px;
+  top: 21%;
   transform: translateY(-50%);
   z-index: 1000;
   transition: color 0.3s ease;
