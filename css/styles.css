@@ -3344,8 +3344,29 @@ label {
     margin: 0 auto;
   }
   .consent-label{
-    height: 20dvh;
+    height: 24dvh;
   }
+  .property-card9 {
+    height: 75dvh;
+
+  }
+  .container-field2 {
+    height: 22.9dvh;
+}
+.container-pieces {
+  height: 28.6dvh;
+}
+.search-container {
+  padding: 1px 12px;
+}
+.flex-number {
+  margin-bottom: 0px;
+}
+.container-etage {
+  margin-bottom: 11%;
+}
+
+
 }
 
 @media (max-width: 400px) {
@@ -3672,8 +3693,9 @@ label {
   cursor: pointer;
   padding: 8px;
   position: absolute;
-  right: 19px;
-  top: 17%;
+  right: 24px;
+  top: 15%;
+
   transform: translateY(-50%);
   z-index: 1000;
   transition: color 0.3s ease;
