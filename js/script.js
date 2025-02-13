@@ -400,58 +400,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Handle progress bar visibility
 
-function handleProgressBarVisibility() {
-    const footer = document.querySelector('.footer');
-    const progressBarFlex = document.querySelector('.progress-bar-flex');
-    let lastScrollTop = 0;
-
-    function checkVisibility() {
-        // Check if we're on mobile
-        const isMobile = window.innerWidth <= 767;
+    function handleProgressBarVisibility() {
+        const footer = document.querySelector('.footer');
+        const progressBarFlex = document.querySelector('.progress-bar-flex');
         
-        // If on mobile, always show the progress bar
-        if (isMobile) {
-            progressBarFlex.style.opacity = '1';
-            progressBarFlex.style.transform = 'translateY(0)';
-            progressBarFlex.style.pointerEvents = 'auto';
-            return;
+        function checkVisibility() {
+            if (!footer || !progressBarFlex) return;
+            
+            const footerRect = footer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            const scrollY = window.scrollY;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Calculate when footer is becoming visible
+            if (footerRect.top <= windowHeight - 100) {  // 100px before footer becomes visible
+                progressBarFlex.style.opacity = '0';
+                progressBarFlex.style.transform = 'translateY(100%)';
+                progressBarFlex.style.pointerEvents = 'none';
+            } else {
+                progressBarFlex.style.opacity = '1';
+                progressBarFlex.style.transform = 'translateY(0)';
+                progressBarFlex.style.pointerEvents = 'auto';
+            }
         }
-
-        // Desktop behavior
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        const footerRect = footer.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-        if (footerRect.top <= windowHeight) {
-            progressBarFlex.style.opacity = '0';
-            progressBarFlex.style.transform = 'translateY(100%)';
-            progressBarFlex.style.pointerEvents = 'none';
-        } else {
-            progressBarFlex.style.opacity = '1';
-            progressBarFlex.style.transform = 'translateY(0)';
-            progressBarFlex.style.pointerEvents = 'auto';
-        }
-
-        // Handle scroll direction
-        if (currentScroll > lastScrollTop) {
-            progressBarFlex.style.transition = 'all 0.3s ease-out';
-        } else {
-            progressBarFlex.style.transition = 'all 0.3s ease-in';
-        }
-
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    
+        // Add smooth transition styles
+        progressBarFlex.style.transition = 'all 0.3s ease';
+    
+        // Check on scroll
+        window.addEventListener('scroll', checkVisibility);
+        
+        // Check on load
+        checkVisibility();
+        
+        // Check on resize
+        window.addEventListener('resize', checkVisibility);
     }
-
-    // Add smooth transition styles
-    progressBarFlex.style.transition = 'all 0.3s ease';
-
-    // Check on scroll
-    window.addEventListener('scroll', checkVisibility);
-    // Check on load
-    checkVisibility();
-    // Check on resize
-    window.addEventListener('resize', checkVisibility);
-}
+    
+    // Add this CSS for smooth transitions
 
     // Initial setup
     showStep(currentStep);
