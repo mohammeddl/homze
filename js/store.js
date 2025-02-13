@@ -4,6 +4,7 @@ const FormStore = {
 
     // Initialize storage with empty data structure
     initializeStore() {
+        localStorage.removeItem(this.STORAGE_KEY);
         if (!localStorage.getItem(this.STORAGE_KEY)) {
             const initialData = {
                 currentStep: 1,

@@ -1,5 +1,6 @@
 import FormStore from './store.js';
 document.addEventListener("DOMContentLoaded", function () {
+    FormStore.clearData();
     let currentStep = 1;
     let currentPath = '';
     const totalSteps = 9;
@@ -81,47 +82,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const resetButton = document.querySelector('.reset-button');
-if (resetButton) {
-    const modal = createConfirmModal();
-    
-    resetButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        modal.classList.add('show');
-    });
-
-    // Handle modal button clicks
-    modal.querySelector('.confirm-modal-button.cancel').addEventListener('click', () => {
-        modal.classList.remove('show');
-    });
-
-    modal.querySelector('.confirm-modal-button.confirm').addEventListener('click', () => {
-        // Reset the form using FormStore
-        FormStore.clearData();
-        
-        // Reset current step and path
-        currentStep = 1;
-        currentPath = '';
-        
-        // Show step 1
-        showStep(1);
-        
-        // Update progress
-        updateProgress();
-        
-        // Hide modal
-        modal.classList.remove('show');
-        
-        // Show success message
-        showAlert('Formulaire réinitialisé', 'success');
-    });
-
-    // Close modal when clicking outside
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('show');
-        }
-    });
-}
+    if (resetButton) {
+        resetButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Immediately clear all form data
+            FormStore.clearData();
+            
+            // Reset current step and path
+            currentStep = 1;
+            currentPath = '';
+            
+            // Show step 1
+            showStep(1);
+            
+            // Update progress
+            updateProgress();
+            
+            // Show success message
+            showAlert('Formulaire réinitialisé', 'success');
+            
+            // Hide progress bar and back button
+            progressSection.classList.remove("active");
+            backLink.style.visibility = "hidden";
+            progressContainerFlex.style.visibility = "hidden";
+            resetButton.style.visibility = "hidden";
+        });
+    }
 
     // Form validation function
     function validateStep(step) {
